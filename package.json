@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "A Vue.js component for keyboard",
   "author": "Shawn Zhang",
-  "private": false,
+  "private": true,
   "main": "dist/vue-custom-keyboard.min.js",
   "scripts": {
     "dev": "node build/dev-server.js",
