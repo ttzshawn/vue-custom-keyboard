@@ -57,11 +57,11 @@ export default {
         onChangeFunc(this.inputValue);
       }
     },
-    done: {
-      type: Function,
-      default: () => {
-        this.isOpen = false;
-      }
+    onBlur: {
+      type: Function
+    },
+    onDone: {
+      type: Function
     },
     defaultValue: {
       type: String,
@@ -90,7 +90,7 @@ export default {
       const inputValue = this.inputValue + level2;
 
       if (inputValue.length > this.maxLength) {
-        this.done();
+        this.onDone();
       } else {
         this.inputValue = inputValue;
         this.onChange(inputValue);
@@ -102,9 +102,6 @@ export default {
 
       this.inputValue = backspaceValue;
       this.onChange(backspaceValue);
-    },
-    onBlur() {
-      this.isOpen = false;
     }
   }
 };
@@ -120,7 +117,7 @@ export default {
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 16px;
+  font-size: 2rem;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
@@ -147,7 +144,7 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  padding-top: 6px;
+  padding-top: 10px;
   user-select: none;
   transition: transform 200ms ease-out;
   transform: translateY(100%);
@@ -171,7 +168,7 @@ export default {
 }
 
 .button {
-  font-size: 14px;
+  font-size: 2rem;
   display: inline;
   width: 80%;
   height: 80%;
@@ -186,7 +183,7 @@ export default {
     outline: 0;
   }
   &:active~.btnActive {
-    font-size: 16px;
+    font-size: 2.5rem;
     line-height: 200%;
     position: absolute;
     top: 0;
@@ -201,9 +198,7 @@ export default {
     box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
     span {
       display: table-cell;
-
       width: 100%;
-
       text-align: center;
       vertical-align: middle;
     }
@@ -211,20 +206,17 @@ export default {
       position: absolute;
       bottom: 0;
       left: 50%;
-
       width: 0;
       height: 0;
-
       content: '';
       transform: translate3d(-50%, 100%, 0);
-
       border-top: 10px solid #fff;
       border-right: 10px solid transparent;
       border-left: 10px solid transparent;
     }
   }
   i {
-    font-size: 28px !important;
+    font-size: 3rem !important;
     color: #fff;
   }
 }
@@ -245,9 +237,10 @@ export default {
   width: 15%;
   vertical-align: middle;
   i {
-    font-size: 20px;
+    font-size: 2.5rem;
   }
   .button {
+    margin-top: 0;
     background-color: #cbcdd1;
     &:active {
       background-color: #fff;

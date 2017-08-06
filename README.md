@@ -1,21 +1,84 @@
 # vue-custom-keyboard
 
-> A Vue.js project
+> A Vue.js component for keyboard
 
-## Build Setup
+## Installation
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+npm i vue-custom-keyboard --save
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Usage
+
+Impoart and use it in a single file component.
+
+```vue
+<template>
+  <VueCustomKeyboard></VueCustomKeyboard>
+</template>
+
+<script>
+  import VueCustomKeyboard from 'vue-custom-keyboard'
+  import 'vue-custom-keyboard/dist/vue-custom-keyboard.min.css'
+
+  export default {
+    name: 'componentWithKeyboard',
+    components: {
+        VueCustomKeyboard
+    }
+  }
+</script>
+```
+
+## Props config
+
+``` javascript
+props: {
+  /**
+   * Visibility for keyboard.
+   * @default false
+   * @type {Boolean}
+   */
+  isOpen: {
+    type: Boolean,
+    default: true
+  },
+  level1: {
+    type: String,
+    default: '粤京津泸鲁冀云辽黑湘皖新苏浙赣鄂桂甘晋蒙陕吉闽贵青藏川宁琼豫渝台港澳'
+  },
+  level2: {
+    type: String,
+    default: '1234567890QWERTYUPASDFGHJKLZXCVBNM'
+  },
+  maxLength: {
+    type: Number,
+    default: 7
+  },
+  onChange: {
+    type: Function
+  },
+  onBlur: {
+    type: Function
+  },
+  onDone: {
+    type: Function
+  },
+  /**
+   * For remembering previous value.
+   * @default ''
+   * @type {String}
+   */
+  defaultValue: {
+    type: String,
+    default: ''
+  }
+}
+```
+
+## Demo
+
+Check [vue-custom-keyboard-demo](https://github.com/ttzshawn/vue-custom-keyboard-demo) and show case below.
+
+![Show case 1](https://github.com/ttzshawn/vue-custom-keyboard-demo/keyboard-demo-1.png)
+![Show case 2](https://github.com/ttzshawn/vue-custom-keyboard-demo/keyboard-demo-2.png)
