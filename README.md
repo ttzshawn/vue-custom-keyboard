@@ -80,5 +80,4 @@ props: {
 
 Check [vue-custom-keyboard-demo](https://github.com/ttzshawn/vue-custom-keyboard-demo) and show case below.
 
-![Show case 1](https://github.com/ttzshawn/vue-custom-keyboard-demo/keyboard-demo-1.png)
-![Show case 2](https://github.com/ttzshawn/vue-custom-keyboard-demo/keyboard-demo-2.png)
+![Show case](https://raw.githubusercontent.com/ttzshawn/vue-custom-keyboard-demo/master/assets/keyboard-demo.png)
